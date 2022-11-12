@@ -84,7 +84,7 @@ def show_maps(data, geo_data, threshold_scale, region_type, key_on):
     folium_static(map_sby)
 
 map_type = st.sidebar.selectbox("What data do you want to see?",("OpenStreetMap", "Stamen Terrain","Stamen Toner"))
-region_type = st.sidebar.selectbox("What data do you want to see?",("DISTRICTE", "COD_POST_ADRE", "SECCIO_CENSAL"))
+region_type = st.sidebar.selectbox("What data do you want to see?",("DISTRICTE", "COD_POST_ADRE"))
 map_sby = folium.Map(tiles=map_type, location=center(), zoom_start=10)
 st.title('Water Usage in Barcelona')
 
@@ -101,11 +101,13 @@ elif region_type == "COD_POST_ADRE":
         'geojson/Barcelona_CP.geojson'))  # source: https://raw.githubusercontent.com/inigoflores/ds-codigos-postales/master/data/BARCELONA.geojson
     geo_data = data_geo_post_code
     key_on = 'feature.properties.COD_POSTAL'
-else:
-    df_data = load_data_per_seccio_censal()
-    data_geo_seccio_censal = json.load(open('geojson/SeccionesCensales.json'))
-    geo_data = data_geo_seccio_censal
-    key_on = 'feature.properties.CUSEC'
+
+# data for secciones censales are too big 
+# else:
+#     df_data = load_data_per_seccio_censal()
+#     data_geo_seccio_censal = json.load(open('geojson/SeccionesCensales.json'))
+#     geo_data = data_geo_seccio_censal
+#     key_on = 'feature.properties.CUSEC'
 
 threshold_scale = threshold(df_data)
 
