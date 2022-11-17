@@ -1,31 +1,3 @@
-,nom_mun_ABData,nom_mun,cod_mun
-0,SANT BOI,Sant Boi de Llobregat,08200
-1,TORRELLES LLOBREGAT,Torrelles de Llobregat,08289
-2,BADALONA,Badalona,08015
-3,GAVA,Gavà,08089
-4,CORNELLA,Cornellà de Llobregat,08073
-5,VILADECANS,Viladecans,08301
-6,BEGUES,Begues,08020
-7,L'HOSPITALET LLOBR.,"Hospitalet de Llobregat, L'",08101
-8,ESPLUGUES,Esplugues de Llobregat,08077
-9,PALLEJA,Pallejà,08157
-10,MONTGAT,Montgat,08126
-11,SANT JOAN DESPI,Sant Joan Despí,08217
-12,SANT CUGAT,Sant Cugat del Vallès,08205
-13,CASTELLDEFELS,Castelldefels,08056
-14,CERDANYOLA,Cerdanyola del Vallès,08266
-15,STA.COLOMA GRAMENET,Santa Coloma de Gramenet,08245
-16,SANT ADRIA,Sant Adrià de Besòs,08194
-17,LA LLAGOSTA,"Llagosta, La",08105
-18,SANT CLIMENT LLOB.,Sant Climent de Llobregat,08204
-19,SANT FELIU LL.,Sant Feliu de Llobregat,08211
-20,SANT JUST DESVERN,Sant Just Desvern,08221
-21,EL PAPIOL,"Papiol, El",08158
-22,BARCELONA,Barcelona,08019
-23,LES BOTIGUES SITGES,Sitges,08270
-24,STA.COLOMA CERVELLO,Santa Coloma de Cervelló,08244
-25,MONTCADA I REIXAC,Montcada i Reixac,08125
-26,BADIA,Badia del Vallès,08904
-27,TIANA,Tiana,08282
-28,SABADELL,Sabadell,08187
-29,RIPOLLET,Ripollet,08180
+version https://git-lfs.github.com/spec/v1
+oid sha256:22c9ee4178630184ca0c9c7364b560db38e8d1990feafbb3412b671ef1bad882
+size 1188
