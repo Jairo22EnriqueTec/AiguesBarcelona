@@ -14,6 +14,12 @@ import warnings
 warnings.filterwarnings("ignore")
 
 
+def CalculateFences(T):
+    upper = int(T.y.quantile([0.75]))  + 1.5 * (int(T.y.quantile([0.75])) - int(T.y.quantile([0.25])))
+    lower = int(T.y.quantile([0.25]))  - 1.5 * (int(T.y.quantile([0.75])) - int(T.y.quantile([0.25])))
+    return max(lower, 0), upper
+
+
 def getProphet(prior = 0.05, monthly = False):
     """
     Return a Prophet type compilated with holidays 
@@ -39,7 +45,7 @@ def getProphet(prior = 0.05, monthly = False):
     else:
         return Prophet(changepoint_prior_scale = prior, holidays = lockdowns)
 
-def analyze(Temp, name, gt_0 = True, max_ = None, days = 365, prior = 0.05, monthly = False):
+def analyze(Temp, name, gt_0 = 0, max_ = None, days = 365, prior = 0.05, monthly = False):
     """
     In:
     
@@ -51,8 +57,8 @@ def analyze(Temp, name, gt_0 = True, max_ = None, days = 365, prior = 0.05, mont
     """
     
     
-    if gt_0:
-        Temp = Temp[Temp.y > 0]
+   
+    Temp = Temp[Temp.y > gt_0]
     
     if type(max_) == int or type(max_) == float:
         Temp = Temp[Temp.y < max_]
