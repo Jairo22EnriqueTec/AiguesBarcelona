@@ -35,7 +35,7 @@ df_economica_covid['covid'] = df_economica_covid['covid'].fillna(0)
 print(df_economica_covid)
 
 prophet_economia_covid, forecast_economia_covid = utils.analyze(df_economica_covid, 'consum economico - covid')
-prophet_economia, forecast_economia = utils.analyze(df_economica, 'consum economico')
+#prophet_economia, forecast_economia = utils.analyze(df_economica, 'consum economico')
 
 prophet_economia_covid.plot(forecast_economia_covid)
 plt.show()

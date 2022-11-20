@@ -57,7 +57,9 @@ def analyze(Temp, name, gt_0 = True, max_ = None, days = 365, prior = 0.05, mont
     if type(max_) == int or type(max_) == float:
         Temp = Temp[Temp.y < max_]
     
-    m = getProphet(prior, monthly)
+    #m = getProphet(prior, monthly)
+    m = getProphet()
+    #m.add_regressor('covid')
     m.fit(Temp)
     future = m.make_future_dataframe(periods = days)
     forecast = m.predict(future)
@@ -70,4 +72,7 @@ def analyze(Temp, name, gt_0 = True, max_ = None, days = 365, prior = 0.05, mont
     fig = m.plot(forecast)
     a = add_changepoints_to_plot(fig.gca(), m, forecast)
     fig.show()
+
+    return m, forecast
+
 
