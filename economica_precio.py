@@ -34,6 +34,7 @@ for date in df_precio_tramo1['fecha_inicio']:
 
 df_precio_comercial['precio'] = df_precio_comercial['precio'].interpolate(method='pad')
 
+#df_precio_comercial.to_csv('data/precio_comercial.csv')
 
 df_economica = df_economica.join(df_precio_comercial.set_index('fecha'), on='FECHA')
 
